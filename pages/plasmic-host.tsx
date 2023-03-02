@@ -1,5 +1,6 @@
 
 import * as React from 'react';
+import "bootswatch/dist/sketchy/bootstrap.min.css";
 import Script from 'next/script';
 import { PlasmicCanvasHost, registerComponent } from '@plasmicapp/host';
 

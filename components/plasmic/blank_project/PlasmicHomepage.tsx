@@ -35,6 +35,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: PKldDYkH42/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -55,6 +56,7 @@ export type PlasmicHomepage__OverridesType = {
   section?: p.Flex<"section">;
   h1?: p.Flex<"h1">;
   text?: p.Flex<"div">;
+  embedHtml?: p.Flex<typeof Embed>;
 };
 
 export interface DefaultHomepageProps {}
@@ -170,6 +172,15 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
           </p.Stack>
+
+          <Embed
+            data-plasmic-name={"embedHtml"}
+            data-plasmic-override={overrides.embedHtml}
+            className={classNames("__wab_instance", sty.embedHtml)}
+            code={
+              '<nav class="navbar navbar-expand-lg navbar-dark bg-primary">\r\n  <div class="container-fluid">\r\n    <a class="navbar-brand" href="#">Navbar</a>\r\n    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">\r\n      <span class="navbar-toggler-icon"></span>\r\n    </button>\r\n    <div class="collapse navbar-collapse" id="navbarColor01">\r\n      <ul class="navbar-nav me-auto">\r\n        <li class="nav-item">\r\n          <a class="nav-link active" href="#">Home\r\n            <span class="visually-hidden">(current)</span>\r\n          </a>\r\n        </li>\r\n        <li class="nav-item">\r\n          <a class="nav-link" href="#">Features</a>\r\n        </li>\r\n        <li class="nav-item">\r\n          <a class="nav-link" href="#">Pricing</a>\r\n        </li>\r\n        <li class="nav-item">\r\n          <a class="nav-link" href="#">About</a>\r\n        </li>\r\n        <li class="nav-item dropdown">\r\n          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>\r\n          <div class="dropdown-menu">\r\n            <a class="dropdown-item" href="#">Action</a>\r\n            <a class="dropdown-item" href="#">Another action</a>\r\n            <a class="dropdown-item" href="#">Something else here</a>\r\n            <div class="dropdown-divider"></div>\r\n            <a class="dropdown-item" href="#">Separated link</a>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n      <form class="d-flex">\r\n        <input class="form-control me-sm-2" type="search" placeholder="Search">\r\n        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>\r\n      </form>\r\n    </div>\r\n  </div>\r\n</nav>' as const
+            }
+          />
         </div>
       </div>
     </React.Fragment>
@@ -177,10 +188,11 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1", "text"],
+  root: ["root", "section", "h1", "text", "embedHtml"],
   section: ["section", "h1", "text"],
   h1: ["h1"],
-  text: ["text"]
+  text: ["text"],
+  embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -190,6 +202,7 @@ type NodeDefaultElementType = {
   section: "section";
   h1: "h1";
   text: "div";
+  embedHtml: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -256,6 +269,7 @@ export const PlasmicHomepage = Object.assign(
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
     text: makeNodeComponent("text"),
+    embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

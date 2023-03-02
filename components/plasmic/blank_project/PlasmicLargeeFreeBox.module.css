@@ -1,0 +1,79 @@
+.large {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .large {
+    width: 100%;
+    height: 3094px;
+    padding-left: 486px;
+    min-width: 0;
+  }
+}
+.svg___4Wvtt {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  color: #000;
+  height: 4px;
+  display: block;
+  top: 0px;
+  left: 1px;
+  right: 1px;
+  width: 1390px;
+}
+.svg__iRiE {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  color: #000;
+  height: 4px;
+  display: block;
+  left: 6px;
+  right: 3px;
+  bottom: 0px;
+  width: 1383px;
+}
+.verticalMedium {
+  width: 4px;
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  bottom: 0px;
+}
+.svg__uyy6E {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  color: #000;
+  transform: rotate(-90deg);
+  width: 3150px;
+  height: 4px;
+  display: block;
+  transform-origin: top left;
+  top: 100%;
+  left: 0%;
+}
+.verticalMedium2 {
+  width: 6px;
+  display: block;
+  position: absolute;
+  top: 2px;
+  right: 0px;
+  bottom: 1px;
+}
+.svg___7Becj {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  color: #000;
+  transform: rotate(-90deg);
+  width: 3149px;
+  height: 6px;
+  display: block;
+  transform-origin: top left;
+  top: 100%;
+  left: 0%;
+}

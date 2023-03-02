@@ -2,6 +2,7 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/host";
+import "bootswatch/dist/sketchy/bootstrap.min.css";
 
 import { ScreenVariantProvider } from "../components/plasmic/blank_project/PlasmicGlobalVariant__Screen";
 import { PlasmicHomepage } from "../components/plasmic/blank_project/PlasmicHomepage";
